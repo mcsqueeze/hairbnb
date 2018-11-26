@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   def create
     @new_booking = Booking.new(booking_params)
     if @new_booking.save
-      redirect_to flats_path
+      redirect_to bookings_path
     else
       render :show
     end
