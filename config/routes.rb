@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'wigs#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  resources :wigs
+ resources :bookings
 end
