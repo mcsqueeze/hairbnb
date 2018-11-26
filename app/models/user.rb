@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :wigs
+  has_many :bookings
+  has_many :wigs, through: :bookings, as: :rented_wigs
+  has_many :wigs, as: :owned_wigs
 
-  validates :usertype, inclusion: { in: [lender, bigwig] }
+  validates :usertype, inclusion: { in: ["lender", "bigwig"] }
+
 end
