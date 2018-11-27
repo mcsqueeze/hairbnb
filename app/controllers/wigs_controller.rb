@@ -11,6 +11,8 @@ class WigsController < ApplicationController
 
   def create
     @wig = Wig.new(wig_params)
+    @wig.user = current_user
+    authorize @wig
     if @wig.save
       redirect_to wigs_path
     else
