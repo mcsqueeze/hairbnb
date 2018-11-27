@@ -19,6 +19,9 @@
         <div class="wig-card">
           <div class="wig-card-image" style="background-image: url('<%= wig.photo %>')"></div>
           <div class="wig-card-content">
+            <div class="wig-card-photo">
+              <h4><%= cl_image_tag wig.photo%></h4>
+            </div>
             <div class="wig-card-title">
               <h4><%= wig.title %></h4>
             </div>
