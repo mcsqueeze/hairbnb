@@ -20,6 +20,7 @@ class WigsController < ApplicationController
 
   def show
     @wig = Wig.find(params[:id])
+    skip_authorization
   end
 
   def edit
