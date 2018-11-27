@@ -1,13 +1,13 @@
 <div class="container xs-3">
   <div class="row">
     <div class="col-12">
-      <h1>HairBnB</h1>
+      <h1>Available Looks</h1>
     </div>
   </div>
 
-  <!-- <div class="row">
+ <!--  <div class="row">
     <div class="col">
-      <p>You searched for <strong><%= @query %></strong>. We found <%= @wigs.count %> wigs on our website.</p>
+      <p>You searched for <strong><%= @query %></strong>. We found <%= @wigs.count %> on our website.</p>
     </div>
   </div> -->
 
@@ -15,7 +15,7 @@
     <% @wigs.each do |wig| %>
       <div class="col-4">
         <div class="wig-card">
-          <div class="wig-card-image" style="background-image: url('<%= cl_image_tag("Marble-background-2-1-1") %>')"></div>
+          <div class="wig-card-image" style="background-image: url('<%= wig.photo %>')"></div>
           <div class="wig-card-content">
             <div class="wig-card-title">
               <h4><%= wig.title %></h4>
@@ -23,12 +23,12 @@
             <p><%= wig.description %></p>
             <div class="flex">
               <div class="flex md-3">
-                <i class="material-icons xs-3">euro_symbol</i> <%= wig.price %>
+                <i class="material-icons xs-3">$</i> <%= wig.price %>
               </div>
             </div>
           </div>
           <div class="wig-card-actions">
-            <%= link_to 'More info', wig_path(wig) %>
+            <%= link_to 'Details', wig_path(wig) %>
             <a href="edit_wig_path" class="md-3 text-warning">Edit</a>
           </div>
         </div>
