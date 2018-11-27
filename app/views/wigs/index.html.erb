@@ -1,2 +1,39 @@
-<h1>HairBnB</h1>
-<p>Find your best look!</p>
+<div class="container xs-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>HairBnB</h1>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col">
+      <p>You searched for <strong><%= @query %></strong>. We found <%= @wigs.count %> wigs on our website.</p>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <% @wigs.each do |wig| %>
+      <div class="col-4">
+        <div class="wig-card">
+          <div class="wig-card-image" style="background-image: url('<%= wig.picture_url %>')"></div>
+          <div class="wig-card-content">
+            <div class="wig-card-title">
+              <h4><%= wig.name %></h4>
+            </div>
+            <p><%= wig.description %></p>
+            <div class="flex">
+              <div class="flex md-3">
+                <i class="material-icons xs-3">euro_symbol</i> <%= wig.price %>
+              </div>
+            </div>
+          </div>
+          <div class="wig-card-actions">
+            <%= link_to 'More info', wig_path(wig) %>
+            <a href="#" class="md-3 text-warning">Edit</a>
+            <a href="#" class="md-3 text-danger">Remove</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
