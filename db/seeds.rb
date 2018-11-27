@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 u1 = User.create(email: "margaux@gmail.com", password: "margaux", usertype: "lender")
-Wig.create(title: "Red", user: u1, description: "red hair")
+Wig.create(title: "Red", user: u1, description: "red hair", price: "15")
