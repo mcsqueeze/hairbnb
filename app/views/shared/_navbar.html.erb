@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "browse all wigs", "wigs_path", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "my bookings", "bookings_path", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "publish an offer", "new_wig_path", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
