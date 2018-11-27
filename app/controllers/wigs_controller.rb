@@ -2,11 +2,11 @@ class WigsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   def index
     @wigs = policy_scope(Wig)
-
   end
 
   def new
     @wig = Wig.new
+    authorize @wig
   end
 
   def create
