@@ -1,4 +1,5 @@
 class WigsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @wigs = Wig.all
   end
@@ -29,6 +30,7 @@ class WigsController < ApplicationController
       redirect_to wigs_path
     else
       render :edit
+    end
   end
 
   def destroy
@@ -36,10 +38,10 @@ class WigsController < ApplicationController
     flash[:success] = "Wig Deleted"
     redirect_to wigs_path
   end
-end
 
   private
 
   def wig_params
     params.require(:wig).permit(:title, :photo, :description, :location, :policies, :price)
   end
+end
