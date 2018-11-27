@@ -1,2 +1,18 @@
 <h1>Wigs#show</h1>
 <p>Find me in app/views/wigs/show.html.erb</p>
+<h2><%= @wig.title %></h2>
+<p>Description: <%= @wig.description %></p>
+<p>Location: <%= @wig.location %></p>
+<p>Policies: <%= @wig.policies %></p>
+<p>Price: <%= @wig.price %></p>
+<p>Price: <%= @wig.created_at %></p>
+<p>Price: <%= @wig.updated_at %></p>
+
+
+
+
+<%= link_to 'Go back to wigs list', wigs_path %>
+
+
+
+
