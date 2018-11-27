@@ -8,3 +8,6 @@
 
 u1 = User.create(email: "margaux@gmail.com", password: "margaux", usertype: "lender")
 Wig.create(title: "Red", user: u1, description: "red hair")
+Booking.create (start_date: 20181011, end_date: 20181012, user_id: u1, wig_id: 1)
+
+
