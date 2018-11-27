@@ -8,4 +8,6 @@
 
 u1 = User.create(email: "margaux@gmail.com", password: "margaux", usertype: "lender")
 w1 = Wig.create(title: "Red", user: u1, description: "red hair", price: "15")
-Booking.create (start_date: 20181011, end_date: 20181012, user: u1, wig: w1)
+d1 = DateTime.new(2018, 11, 10)
+d2 = DateTime.new(2018, 12, 11)
+Booking.create (start_date: d1, end_date: d2, user: u1, wig: w1)
