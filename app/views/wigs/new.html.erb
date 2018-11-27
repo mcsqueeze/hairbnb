@@ -1,5 +1,16 @@
 <h1>Wigs#new</h1>
 
-form to create a new wig
+<p>form to create a new wig</p>
 
-<p>Find me in app/views/wigs/new.html.erb</p>
+<%= simple_form_for [@wig] do |w| %>
+  <%= w.input :title %>
+  <%= w.input :description %>
+  <%= w.input :photo %>
+  <%= w.input :location %>
+  <%= w.input :policies %>
+  <%= w.input :price %>
+  <%= w.submit "submit wig", class: "btn btn-primary" %>
+<% end %>
+
+
+
