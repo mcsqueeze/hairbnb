@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
 
 u1 = User.create(email: "margaux@gmail.com", password: "margaux", usertype: "lender")
-w1 = Wig.create(title: "Red", user: u1, description: "red hair", price: "15")
-d1 = DateTime.new(2018, 11, 10)
-d2 = DateTime.new(2018, 12, 11)
-Booking.create (start_date: d1, end_date: d2, user: u1, wig: w1)
+w1 = Wig.create(title: "Red", user: User.first, description: "red hair", price: "15")
+d1 = Date.new(2018,11,3)
+d2 = Date.new(2018,11,4)
+Booking.create(start_date: d1, end_date: d2, user: User.first, wig: w1)
