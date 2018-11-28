@@ -1,15 +1,36 @@
-<div class="col-sm-offset-4 col-sm-4">
-<%= simple_form_for [@booking] do |b| %>
-<% if @booking.errors.any? %>
-  <% @booking.errors.full_messages.each do |m| %>
+
+<%= simple_form_for [@wig, @booking], :url => wig_bookings_path, :method => :post do |b| %>
+  <% if @booking.errors.any? %>
+    <% @booking.errors.full_messages.each do |m| %>
     <p><%= m %></p>
+    <% end %>
   <% end %>
+
+    <div class="col-sm-6">
+      <h2>booking details</h2>
+        <%= b.input :start_date %>
+        <%= b.input :end_date %>
+    </div>
+
+    <div class="col-sm-6 container-card-booking">
+      <div class="row">
+        <br>
+        <br>
+        <div>
+        <%= cl_image_tag @booking.wig.photo, :transformation=>[
+        {:x=>355, :y=>410, :width=>300, :height=>200},
+        {:width=>300, :height=>300, :crop=>"fill"}
+        ]%>
+        </div>
+        <br>
+        <br>
+        <div>
+        <%= b.submit "confirm booking", class: "btn btn-primary" %>
+        </div>
+      </div>
+
+    </div>
+
+
 <% end %>
-<h2>booking details</h2>
-  <%= b.input :start_date %>
-  <%= b.input :end_date %>
-  <%= b.submit "confirm booking", class: "btn btn-primary" %>
-<% end %>
-<p>(Bookingss#new)</p>
-</div>
 
