@@ -38,6 +38,7 @@ class WigsController < ApplicationController
   end
 
   def destroy
+    skip_authorization
     Wig.find(params[:id]).destroy
     flash[:success] = "Wig Deleted"
     redirect_to wigs_path
