@@ -1,5 +1,5 @@
 <div class="col-sm-offset-4 col-sm-4">
-  <div>
+  <div class= "centered-form">
   <h2><%= @wig.title %></h2>
   <p>Description: <%= @wig.description %></p>
   <p>Location: <%= @wig.location %></p>
@@ -14,8 +14,6 @@
   </div>
 <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
 <%= link_to 'Book', new_wig_booking_path(@wig), { :class => "btn btn-primary"} %>
-
-<p>Wigs#show</p>
 
 </div>
 
