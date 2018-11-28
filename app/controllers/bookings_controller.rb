@@ -7,16 +7,24 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @new_booking = Booking.new
     authorize @booking
+  end
 
+  def new
+    @booking = Booking.new
+    authorize @booking
   end
 
   def create
-    @new_booking = Booking.new(booking_params)
-    if @new_booking.save
-      redirect_to bookings_path
-    else
-      render :show
-    end
+    @booking = Booking.new(booking_params)
+    @wig = Wig.find(params[:id])
+    authorize @booking
+    @booking.user = current_user
+    @booking.wig = @wig
+      if @booking.save
+        redirect_to booking_path(@wig)
+      else
+        render :new
+      end
   end
 
   def edit
@@ -26,5 +34,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

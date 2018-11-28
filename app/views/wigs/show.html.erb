@@ -1,24 +1,27 @@
-<h1>Wigs#show</h1>
-<p>Find me in app/views/wigs/show.html.erb</p>
+<div class="col-sm-offset-4 col-sm-4">
+  <div>
+  <h2><%= @wig.title %></h2>
+  <p>Description: <%= @wig.description %></p>
+  <p>Location: <%= @wig.location %></p>
+  <p>Policies: <%= @wig.policies %></p>
+  <p>Price: <%= @wig.price %> $ </p>
+    <div>
+    <%= cl_image_tag @wig.photo, :transformation=>[
+      {:x=>355, :y=>410, :width=>300, :height=>200},
+      {:width=>130, :height=>100, :crop=>"fill"}
+      ]%>
+    </div>
+  </div>
+<%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
+<%= link_to 'Book', new_wig_booking_path(@wig), { :class => "btn btn-primary"} %>
 
-<div>
-<h2><%= @wig.title %></h2>
-<p>Description: <%= @wig.description %></p>
-<p>Location: <%= @wig.location %></p>
-<p>Policies: <%= @wig.policies %></p>
-<p>Price: <%= @wig.price %> $ </p>
-<%= cl_image_tag @wig.photo%>
+<p>Wigs#show</p>
+
 </div>
 
 
 
 
-<%= link_to 'Back to wigs list', wigs_path, { :class => "btn btn-primary"} %>
-
-
-
-
-<%= link_to 'Book this wig', booking_path, { :class => "btn btn-primary"} %>
 
 
 
