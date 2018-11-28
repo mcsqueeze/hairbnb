@@ -1,2 +1,15 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
+
+
+<div>
+<h2><%= @booking.title %></h2>
+<p>start date: <%= @booking.start_date%></p>
+<p>end date: <%= @booking.end_date%></p>
+<p>Wig details: <%= @booking.wig.title %> $ </p>
+<p>Price: <%= @booking.wig.price %> $ </p>
+</div>
+
+
+
+<%= link_to 'Back to your bookings list', bookings_path, { :class => "btn btn-primary"} %>
