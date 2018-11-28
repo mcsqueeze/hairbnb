@@ -1,10 +1,13 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-
 
 <div>
-<h2><%= @booking.title %></h2>
-<p>start date: <%= @booking.start_date%></p>
+<h2><%= @booking.wig.title  %> </h2>
+      <div>
+      <%= cl_image_tag @booking.wig.photo, :transformation=>[
+        {:x=>355, :y=>410, :width=>300, :height=>200},
+        {:width=>130, :height=>100, :crop=>"fill"}
+        ]%>
+      </div>
+<p> start date: <%= @booking.start_date%></p>
 <p>end date: <%= @booking.end_date%></p>
 <p>Wig details: <%= @booking.wig.title %> $ </p>
 <p>Price: <%= @booking.wig.price %> $ </p>

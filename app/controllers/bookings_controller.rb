@@ -11,17 +11,20 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @wig = Wig.find(params[:wig_id])
+    @booking.wig = @wig
     authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @wig = Wig.find(params[:id])
+
+    @wig = Wig.find(params[:wig_id])
     authorize @booking
     @booking.user = current_user
     @booking.wig = @wig
       if @booking.save
-        redirect_to booking_path(@wig)
+        redirect_to booking_path(@booking)
       else
         render :new
       end
