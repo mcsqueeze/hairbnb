@@ -81,6 +81,8 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    flatpickr_rails (1.1.0)
+      railties (>= 3.0)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     globalid (0.4.1)
@@ -234,6 +236,7 @@ DEPENDENCIES
   cloudinary
   devise
   dotenv-rails
+  flatpickr_rails
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
@@ -256,4 +259,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

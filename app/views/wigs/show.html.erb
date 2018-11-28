@@ -11,6 +11,10 @@
       {:width=>130, :height=>100, :crop=>"fill"}
       ]%>
     </div>
+    <div class="field">
+      <p>From</p><input type="text" id="calendar">
+      <p>To</p><input type="text" id="calendar1">
+    </div>
   </div>
 <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
 <%= link_to 'Book', new_wig_booking_path(@wig), { :class => "btn btn-primary"} %>
