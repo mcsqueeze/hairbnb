@@ -1,6 +1,8 @@
+
 <div class="container">
 
   <div class="col-sm-offset-4 col-sm-4">
+
     <div>
     <h2><%= @wig.title %></h2>
     <p>Description: <%= @wig.description %></p>
@@ -18,7 +20,6 @@
   <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
   <%= link_to 'Book', new_wig_booking_path(@wig), { :class => "btn btn-primary"} %>
   </div>
-
 </div>
 
 
