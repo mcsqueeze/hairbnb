@@ -5,9 +5,15 @@
 
 <div class="col-sm-offset-4 col-sm-4">
 <%= simple_form_for [@wig] do |w| %>
+<% if @wig.errors.any? %>
+  <% @wig.errors.full_messages.each do |m| %>
+    <p><%= m %></p>
+  <% end %>
+<% end %>
   <%= w.input :title %>
   <%= w.input :description %>
   <%= w.input :photo %>
+  <%= w.input :photo_cache, as: :hidden %>
   <%= w.input :location %>
   <%= w.input :policies %>
   <%= w.input :price %>

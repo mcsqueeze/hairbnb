@@ -7,12 +7,16 @@
 <p>Location: <%= @wig.location %></p>
 <p>Policies: <%= @wig.policies %></p>
 <p>Price: <%= @wig.price %> $ </p>
-<p><%= @wig.photo %></p>
+<%= cl_image_tag @wig.photo%>
 </div>
 
 
 
+
 <%= link_to 'Back to wigs list', wigs_path, { :class => "btn btn-primary"} %>
+
+
+
 
 <%= link_to 'Book this wig', booking_path, { :class => "btn btn-primary"} %>
 
