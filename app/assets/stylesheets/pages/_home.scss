@@ -5,7 +5,7 @@
   background-position: center;
   color: white;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .card-user {
   position: absolute;
@@ -43,7 +43,7 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 2 !important;
   background: black;
   opacity: 0;
 }
