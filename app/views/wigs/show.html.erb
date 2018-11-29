@@ -9,5 +9,9 @@
     <p>Location: <%= @wig.location %></p>
     <p>Policies: <%= @wig.policies %></p>
     <p>Price: <%= @wig.price %> $ </p>
+    <div class="buttons">
+  <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
+  <%= link_to 'Book', new_wig_booking_path(@wig), { :class => "btn btn-primary"} %>
+  </div>
     </div>
 </div>
