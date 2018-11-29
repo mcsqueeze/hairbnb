@@ -23,7 +23,7 @@
           <div class="booking-card-actions">
             <%= link_to 'More info', booking_path(b) %>
             <a href="edit_booking_path" class="md-3 text-warning">Edit</a>
-            <%= link_to 'Cancel booking', booking_path(b) %>
+            <%= link_to "Cancel booking", booking_path(b), :method  => :delete, :class => "btn btn-primary" %>
 
           </div>
         </div>

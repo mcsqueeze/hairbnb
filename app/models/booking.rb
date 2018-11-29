@@ -3,6 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :wig
 
   validate :bookings_must_not_overlap
+  validate :start_date_end_date
+
 
   private
 
@@ -22,9 +24,10 @@ def start_date_end_date
               .class
               .where.not(id: id)
               .where(wig_id: wig_id)
-              .where(start_date < end_date)
+              .where('start_date < end_date')
               .none?
 
   errors.add(:base, 'Start date must occur before End date')
 end
+
 end
