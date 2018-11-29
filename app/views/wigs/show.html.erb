@@ -12,7 +12,6 @@
     <div class="buttons">
   <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
 
-  </div>
     <div class="product-info">
       <div class="product-text">
         <h2><%= @wig.title %></h2>
@@ -42,8 +41,11 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-    <%= render "bookings/form" %>
-    </div>
 
+
+</div>
+
+<div class="col-sm-6">
+<%= render "bookings/form" %>
+</div>
 
