@@ -1,17 +1,16 @@
 <div class="background" style="background-image: /*linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))*//*,*/ url('<%= cl_image_path ("Marble-background-2-1-1") %>')">
 
+    <div class="col-sm-6 container-card-booking">
+      <%= simple_form_for [@wig, @booking], :url => wig_bookings_path, :method => :post do |b| %>
+        <% if @booking.errors.any? %>
+          <% @booking.errors.full_messages.each do |m| %>
+          <p><%= m %></p>
+          <% end %>
 
-<%= simple_form_for [@wig, @booking], :url => edit_booking_path, :method => :post do |b| %>
-  <% if @booking.errors.any? %>
-    <% @booking.errors.full_messages.each do |m| %>
-    <p><%= m %></p>
-    <% end %>
-  <% end %>
-
-    <div class="col-sm-6">
-      <h2>booking details</h2>
-        <%= b.start_date %>
-        <%= b.end_date %>
+        <% end %>
+        <h2>Choose your dates</h2>
+        <%= b.input :start_date %>
+        <%= b.input :end_date %>
     </div>
 
     <div class="col-sm-6 container-card-booking">
@@ -28,11 +27,7 @@
         <br>
         <div>
         <%= b.submit "confirm booking", class: "btn btn-primary" %>
+  <% end %>
         </div>
       </div>
-
     </div>
-
-
-<% end %>
-
