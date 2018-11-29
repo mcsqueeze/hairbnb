@@ -3,7 +3,7 @@
 <h1>All your bookings</h1>
 
 <div class="row">
-    <% @bookings.each do |b| %>
+    <% @current_user.bookings.each do |b| %>
       <div class="col-4">
         <div class="booking-card">
           <div class="booking-card-content">
