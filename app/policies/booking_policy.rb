@@ -17,7 +17,11 @@ class BookingPolicy < ApplicationPolicy
     new?
   end
 
-  def index?
+  def edit?
     true
+  end
+
+  def update?
+    edit?
   end
 end
