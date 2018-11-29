@@ -1,17 +1,15 @@
 
-<div class="background" style="background-image: /*linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))*//*,*/ url('<%= cl_image_path ("Marble-background-2-1-1") %>')">
-
 <div class="container">
 
   <div class="col-sm-offset-4 col-sm-4">
 
-    <div>
+    <div class="wig-details">
     <h2><%= @wig.title %></h2>
     <p>Description: <%= @wig.description %></p>
     <p>Location: <%= @wig.location %></p>
     <p>Policies: <%= @wig.policies %></p>
     <p>Price: <%= @wig.price %> $ </p>
-      <div>
+      <div class= image>
       <%= cl_image_tag @wig.photo, :transformation=>[
         {:x=>355, :y=>410, :width=>300, :height=>200},
         {:width=>130, :height=>100, :crop=>"fill"}
