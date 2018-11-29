@@ -1,19 +1,27 @@
+<h1>Booking details</h1>
 
-<div>
-<h2><%= @booking.wig.title  %> </h2>
-      <div>
-      <%= cl_image_tag @booking.wig.photo, :transformation=>[
-        {:x=>355, :y=>410, :width=>300, :height=>200},
-        {:width=>130, :height=>100, :crop=>"fill"}
-        ]%>
+    <div class="flip col-sm-6">
+          <div class="product-img" style="background-image: url('<%= @booking.wig.photo %>')">
+           <h1 class="text-shadow">
+        </div>
+
+        <div class="product-info">
+          <div class="product-text">
+            <h2><%= @booking.wig.title %></h2>
+            <p> start date: <%= @booking.start_date%></p>
+            <p>end date: <%= @booking.end_date%></p>
+            <p>Price: <%= @booking.wig.price %> $ </p>
+          </div>
+          <div class="button-box">
+            <div class="product-price-btn-back">
+              <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn"}%>
+              <%= link_to 'Back to your bookings list', bookings_path, { :class => "wigbtn"} %>
+            </div>
+          </div>
+        </div>
       </div>
-<p> start date: <%= @booking.start_date%></p>
-<p>end date: <%= @booking.end_date%></p>
-<p>Wig details: <%= @booking.wig.title %> $ </p>
-<p>Price: <%= @booking.wig.price %> $ </p>
-</div>
+    </div>
 
 
 
-<%= link_to 'Back to your bookings list', bookings_path, { :class => "btn btn-primary"} %>
 
