@@ -1,6 +1,21 @@
+
   <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
   <div class="wrapper">
     <div class="product-img" style="background-image: url('<%= @wig.photo %>')">
+
+<div class="flip col-sm-6">
+    <div class="front" style="background-image: url('<%= @wig.photo %>')">
+       <h1 class="text-shadow"><%= @wig.title %></hi>
+    </div>
+    <div class="back">
+    <h2><%= @wig.title %></h2>
+    <p>Description: <%= @wig.description %></p>
+    <p>Location: <%= @wig.location %></p>
+    <p>Policies: <%= @wig.policies %></p>
+    <p>Price: <%= @wig.price %> $ </p>
+    <div class="buttons">
+  <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
+
   </div>
     <div class="product-info">
       <div class="product-text">
@@ -19,8 +34,10 @@
         </div>
       </div>
     </div>
+
   </div>
-
-
-
+</div>
+<div class="col-sm-6">
+<%= render "bookings/form" %>
+</div>
 

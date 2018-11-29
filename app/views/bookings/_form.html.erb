@@ -1,0 +1,12 @@
+<%= simple_form_for [@wig, @booking], :url => wig_bookings_path(@wig), :method => :post do |b| %>
+    <% if @booking.errors.any? %>
+      <% @booking.errors.full_messages.each do |m| %>
+      <p><%= m %></p>
+      <% end %>
+    <% end %>
+    <h2>Choose your dates</h2>
+    <%= b.input :start_date %>
+    <%= b.input :end_date %>
+    <%= b.submit "book", class: "btn-primary btn" %>
+<% end %>
+

@@ -3,10 +3,9 @@ class Booking < ApplicationRecord
   belongs_to :wig
 
   validate :bookings_must_not_overlap
-  validate :start_date_end_date
+  validate :start_date_in_past, on: :create
+  validate :start_date_end_date, on: :create
 
-
-  private
 
 def bookings_must_not_overlap
   return if self
@@ -19,15 +18,20 @@ def bookings_must_not_overlap
   errors.add(:base, 'Wig is booked on those dates')
 end
 
-def start_date_end_date
-  return if self
-              .class
-              .where.not(id: id)
-              .where(wig_id: wig_id)
-              .where('start_date < end_date')
-              .none?
 
-  errors.add(:base, 'Start date must occur before End date')
+
+
+def start_date_end_date
+  if start_date > end_date
+    errors.add(:start_date, 'must occur before end date')
+
+end
+end
+
+def start_date_in_past
+  if start_date < Date.today
+    errors.add(:start_date, 'must not be in past')
+  end
 end
 
 end
