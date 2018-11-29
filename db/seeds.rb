@@ -73,7 +73,7 @@ Booking.create(start_date: d1, end_date: d2, user: User.first, wig: w8)
 
 u1 = User.create(email: "margaux@gmail.com", password: "margaux", usertype: "lender")
 w9 = Wig.new(title: "Emanual Macron", user: User.first, description: "professional brown hair", price: "35.00", photo: "http://res.cloudinary.com/dtqkxojhd/image/upload/v1543312966/90485_crop.gif")
-w9.remote_photo_url = "http://res.cloudinary.com/dtqkxojhd/image/upload/v1543409093/rrqtm6ghvqogdeols0hc.jpg"
+w9.remote_photo_url = "http://res.cloudinary.com/dtqkxojhd/image/upload/v1543515600/qtyzytfymlmt9xtxbc2q.jpg"
 w9.save
 d1 = Date.new(2018,11,3)
 d2 = Date.new(2018,11,4)
