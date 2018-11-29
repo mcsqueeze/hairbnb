@@ -23,13 +23,17 @@
                   collection: ['bigwig', 'lender'],
                   required: true %>
 
-      <%= f.input :profile_photo,
+      <%= f.label :profile_photo %>
+      <%= f.file_field :profile_photo,
+                  as: :hidden,
                   type: :file %>
-      <%= f.file_field :profile_photo %>
+
+
 
     <div class="form-actions">
       <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
     </div>
+
   </div>
   <% end %>
 </div>

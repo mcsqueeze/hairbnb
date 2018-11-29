@@ -18,11 +18,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-
     @wig = Wig.find(params[:wig_id])
     authorize @booking
     @booking.user = current_user
     @booking.wig = @wig
+
       if @booking.save
         redirect_to booking_path(@booking)
       else
