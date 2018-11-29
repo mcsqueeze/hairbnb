@@ -38,6 +38,11 @@ class BookingsController < ApplicationController
 
   def destroy
 
+    skip_authorization
+    Booking.find(params[:id]).destroy
+    flash[:success] = "Booking Deleted"
+    redirect_to bookings_path
+
   end
 
   private
