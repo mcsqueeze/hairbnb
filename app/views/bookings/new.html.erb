@@ -1,5 +1,5 @@
 
-<%= simple_form_for [@wig, @booking], :url => wig_bookings_path, :method => :post do |b| %>
+<%= simple_form_for [@wig, @booking], :url => edit_booking_path, :method => :post do |b| %>
   <% if @booking.errors.any? %>
     <% @booking.errors.full_messages.each do |m| %>
     <p><%= m %></p>
@@ -8,8 +8,8 @@
 
     <div class="col-sm-6">
       <h2>booking details</h2>
-        <%= b.input :start_date %>
-        <%= b.input :end_date %>
+        <%= b.start_date %>
+        <%= b.end_date %>
     </div>
 
     <div class="col-sm-6 container-card-booking">
