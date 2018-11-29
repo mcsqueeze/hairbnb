@@ -1,33 +1,27 @@
 
 <h1>Update your booking</h1>
 
-<div class="flip col-sm-6">
-    <div class="front" style="background-image: url('<%= @wig.photo %>')">
-       <h1 class="text-shadow"><%= @wig.title %></hi>
-    </div>
-    <div class="back">
-    <h2><%= @wig.title %></h2>
-    <p>Description: <%= @wig.description %></p>
-    <p>Location: <%= @wig.location %></p>
-    <p>Policies: <%= @wig.policies %></p>
-    <p>Price: <%= @wig.price %> $ </p>
-    <div class="buttons">
-  <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
-  </div>
-    </div>
-</div>
+    <div class="flip col-sm-6">
+          <div class="product-img" style="background-image: url('<%= @wig.photo %>')">
+           <h1 class="text-shadow">
+        </div>
 
-<div class="col-sm-6">
-<%= simple_form_for [@wig, @booking], :method => :patch do |b| %>
-    <% if @booking.errors.any? %>
-      <% @booking.errors.full_messages.each do |m| %>
-      <p><%= m %></p>
-      <% end %>
-    <% end %>
-    <h2>Choose your dates</h2>
-    <%= b.input :start_date %>
-    <%= b.input :end_date %>
-    <%= b.submit "book", class: "btn-primary btn" %>
-<% end %>
+        <div class="product-info">
+          <div class="product-text">
+            <h2><%= @wig.title %></h2>
+            <p>Description: <%= @wig.description %></p>
+            <p>Location: <%= @wig.location %></p>
+            <p>Policies: <%= @wig.policies %></p>
+              <p>$<%= @wig.price %></p>
+          </div>
+          <div class="button-box">
+            <div class="product-price-btn-back">
+              <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn"}%>
+            </div>
+          </div>
+        </div>
+      </div>
 
-</div>
+    <div class="col-sm-6">
+    <%= render "bookings/form" %>
+    </div>
