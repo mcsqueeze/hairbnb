@@ -16,4 +16,15 @@ def bookings_must_not_overlap
 
   errors.add(:base, 'Wig is booked on those dates')
 end
+
+def start_date_end_date
+  return if self
+              .class
+              .where.not(id: id)
+              .where(wig_id: wig_id)
+              .where(start_date < end_date)
+              .none?
+
+  errors.add(:base, 'Start date must occur before End date')
+end
 end

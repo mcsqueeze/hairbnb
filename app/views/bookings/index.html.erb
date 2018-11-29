@@ -24,11 +24,14 @@
           <div class="booking-card-actions">
             <%= link_to 'More info', booking_path(b) %>
             <a href="edit_booking_path" class="md-3 text-warning">Edit</a>
+            <%= link_to 'Cancel booking', booking_path(b) %>
+
           </div>
         </div>
       </div>
     <% end %>
     <%= link_to 'all wigs', wigs_path, { :class => "btn btn-primary"} %>
+
 
   </div>
 </div>
