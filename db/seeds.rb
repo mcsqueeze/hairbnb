@@ -150,3 +150,6 @@ w18.save
 d1 = Date.new(2018,11,3)
 d2 = Date.new(2018,11,4)
 Booking.create(start_date: d1, end_date: d2, user: User.first, wig: w18)
+
+User.create(email: "bigwig@gmail.com", password: "123456", usertype: "lender")
+User.create(email: "lender@gmail.com", password: "123456", usertype: "bigwig")
