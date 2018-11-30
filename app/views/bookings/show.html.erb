@@ -1,27 +1,22 @@
 <h1>Booking details</h1>
-
-    <div class="flip col-sm-6">
+    <div class= "wrapper">
+      <div class= "row">
+    <div class="col-xs-12">
           <div class="product-img" style="background-image: url('<%= @booking.wig.photo %>')">
-           <h1 class="text-shadow">
-        </div>
-
-        <div class="product-info">
+          </div>
+          <div class="product-info">
           <div class="product-text">
             <h2><%= @booking.wig.title %></h2>
-            <p> start date: <%= @booking.start_date%></p>
-            <p>end date: <%= @booking.end_date%></p>
-            <p>Price: <%= @booking.wig.price %> $ </p>
+            <p> Rental Date: <%= @booking.start_date%></p>
+            <p>Return Date: <%= @booking.end_date%></p>
+            <p>Price: $ <%= @booking.wig.price %>/day</p>
           </div>
           <div class="button-box">
-            <div class="product-price-btn-back">
-              <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn"}%>
-              <%= link_to 'Back to your bookings list', bookings_path, { :class => "wigbtn"} %>
-            </div>
+              <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"}%>
+              <%= link_to 'Back to Bookings', bookings_path, { :class => "wigbtn btn btn-primary"} %>
+          </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
 

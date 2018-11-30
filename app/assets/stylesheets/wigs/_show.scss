@@ -1,6 +1,6 @@
 .wrapper {
   height: 420px;
-  width: 740px;
+  width: 800px;
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
@@ -8,6 +8,12 @@
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   background-color: white;
+
+}
+
+.new {
+background-size: cover !important;
+background-position: center;
 }
 
 .product-img {
@@ -33,26 +39,10 @@
 
 
 .product-text h1 {
-  margin: 0 0 0 38px;
+  margin: 0 0 30px 38px;
   padding-top: 52px;
   font-size: 34px;
   color: black;
-}
-
-.wigbtn {
-      display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 13px 13px;
-    font-size: 18px;
-    line-height: 1.42857;
-    border-radius: 2px;
 }
 
 .product-text h1,
@@ -71,7 +61,7 @@
 }
 
 .product-text p {
-  margin: 0 0 0 38px;
+  margin: 0 0 25px 38px;
   font-family: 'Playfair Display', serif;
   color: black;
   line-height: 1em;
@@ -79,68 +69,53 @@
   font-weight: lighter;
 }
 
-.product-price-btn-book {
-  height: 100px;
-  width: 300px;
-  position: relative;
+  .btn {
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+  background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+  background-color:#599bb3;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  padding:13px 32px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
 }
-.product-price-btn-back {
-  height: 100px;
-  width: 300px;
-
-  position: relative;
+.btn:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+  background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+  background-color:#408c99;
 }
-
-.product-price-btn-book  {
-  float: center;
-  display: inline-block;
-  height: 55px;
-  width: 85px;
-
-  box-sizing: border-box;
-  border: transparent;
-  border-radius: 90px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #ffffff;
-  background-color: #9cebd5;
-  cursor: pointer;
-  outline: none;
-}
-
-.product-price-btn-back  {
-  float: center;
-  display: inline-block;
-  height: 55px;
-  width: 200px;
-
-  box-sizing: border-box;
-  border: transparent;
-  border-radius: 90px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #ffffff;
-  background-color: #9cebd5;
-  cursor: pointer;
-  outline: none;
-}
-
-.product-price-btn-back button:hover {
-  background-color: #79b0a1;
-}
-.product-price-btn-book button:hover {
-  background-color: #79b0a1;
+.btn:active {
+  position:relative;
+  top:1px;
 }
 
 .button-box {
   display: flex;
-  margin-top: 50px;
-  justify-content: space-around
+  margin-top: 120px;
+  justify-content: space-around;
 
+}
+
+#wig-show {
+  margin: 50px 150px;
 }

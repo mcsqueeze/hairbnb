@@ -1,33 +1,29 @@
-
-<div class="wide-container">
-  <div class="row">
-    <h3 class="header">All your bookings</h3>
-      <% @current_user.bookings.each do |b| %>
-        <div class="col-xs-12 col-sm-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= b.wig.photo %>');">
-                <div class="card-description">
-                  <div class="booking-card-title">
-                    <h4><%= b.wig.title %></h4>
-                  </div>
-                    <p>booked from <%= b.start_date %></p>
-                    <p>to <%= b.end_date %></p>
-                  <div class="flex">
-                    <div class="flex md-3">
-                       <%= b.wig.price %> <i class="material-icons xs-3">euro_symbol</i>
-                    </div>
-                  </div>
-                </div>
-                <div class="booking-card-actions">
-                  <%= link_to 'details', booking_path(b), :class => "btn btn-primary" %>
-                  <%= link_to 'edit ', edit_booking_path(b), :class => "btn btn-primary" %>
-                  <%= link_to 'cancel', booking_path(b), :method  => :delete, :class => "btn btn-primary" %>
-                </div>
-
-              </div>
-            </div>
-          <% end %>
-          </div>
-        </div>
-      </div>
+ <h3>All Your  Bookings</h3>
+<div class="wrapper">
+<div class="row">
+  <% @current_user.bookings.each do |b| %>
+  <div class="col-xs-12 col-sm-4">
+  <div class="product-img" style="background-image: url('<%= b.wig.photo %>')">
   </div>
-</div>
+  <div class="product-info">
+  <div class="product-text">
+    <h2><%= b.wig.title %></h2>
+    <p>Description: <%= b.wig.description %></p>
+    <p>Location: <%= b.wig.location %></p>
+    <p>Policies: <%= b.wig.policies %></p>
+    <p>$<%= b.wig.price %>/day</p>
+  </div>
+  <div class="button-box">
+  <div class="product-price-btn-book">
+    <%= link_to 'details', booking_path(b), :class => "wigbtn btn btn-primary" %>
+    <%= link_to 'edit ', edit_booking_path(b), :class => "wigbtn btn btn-primary"%>
+    <%= link_to 'cancel', booking_path(b), :method  => :delete, :class => "wigbtn btn btn-primary" %>
+    </div>
+  </div>
+  </div>
+  </div>
+  <% end %>
+  </div>
+  </div>
+
+
