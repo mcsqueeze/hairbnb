@@ -9,8 +9,9 @@
         <p>Description: <%= @wig.description %></p>
         <p>$<%= @wig.price %>/day</p>
       </div>
-      <div class="button-box">
-        <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"} %>
+      <div class="buttons">
+          <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"} %>
+          <%= link_to 'Delete', wig_path, {:method  => :delete, :class => "wigbtn btn btn-primary"} %>
       </div>
     </div>
     </div>

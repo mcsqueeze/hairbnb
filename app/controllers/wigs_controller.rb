@@ -33,6 +33,7 @@ class WigsController < ApplicationController
 
   def update
     if @wig.update(wig_params)
+      flash[:notice] = "wig details successfully updated"
       redirect_to wigs_path
     else
       render :edit
@@ -42,8 +43,8 @@ class WigsController < ApplicationController
   def destroy
     skip_authorization
     Wig.find(params[:id]).destroy
-    flash[:success] = "Wig Deleted"
-    redirect_to wigs_path
+    flash[:notice] = "wig successfully deleted"
+    redirect_to error_path
   end
 
   def dashboard
@@ -51,9 +52,16 @@ class WigsController < ApplicationController
     @wigs = Wig.where(user: current_user)
   end
 
+  def error
+    skip_authorization
+  end
+
   private
 
   def wig_params
     params.require(:wig).permit(:title, :photo, :description, :location, :policies, :price)
   end
+
+
+
 end
