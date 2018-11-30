@@ -1,7 +1,6 @@
-
-  <div class="wide-container">
-    <div class="row">
-      <h3 class="header">Browse all Wigs</h3>
+<div class="wide-container">
+  <div class="row">
+    <h3 class="header">Browse all Wigs</h3>
       <% @wigs.each do |wig| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= wig.photo %>');">
@@ -14,5 +13,5 @@
         </div>
       </div>
       <% end %>
-    </div>
   </div>
+</div>

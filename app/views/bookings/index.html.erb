@@ -1,29 +1,22 @@
- <h3>All Your  Bookings</h3>
-<div class="wrapper">
-<div class="row">
-  <% @current_user.bookings.each do |b| %>
-  <div class="col-xs-12 col-sm-4">
-  <div class="product-img" style="background-image: url('<%= b.wig.photo %>')">
-  </div>
-  <div class="product-info">
-  <div class="product-text">
-    <h2><%= b.wig.title %></h2>
-    <p>Description: <%= b.wig.description %></p>
-    <p>Location: <%= b.wig.location %></p>
-    <p>Policies: <%= b.wig.policies %></p>
-    <p>$<%= b.wig.price %>/day</p>
-  </div>
-  <div class="button-box">
-  <div class="product-price-btn-book">
-    <%= link_to 'details', booking_path(b), :class => "wigbtn btn btn-primary" %>
-    <%= link_to 'edit ', edit_booking_path(b), :class => "wigbtn btn btn-primary"%>
-    <%= link_to 'cancel', booking_path(b), :method  => :delete, :class => "wigbtn btn btn-primary" %>
+<div class="wide-container">
+    <div class="row">
+      <h3 class="header">Your Bookings</h3>
+      <br>
+      <br>
+      <% @current_user.bookings.each do |b| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= b.wig.photo %>');">
+         <div class="card-description">
+          <h2><%=b.wig.title%></h2>
+          <h6><%=b.wig.description%></h6>
+          </div>
+          </div>
+          <div class="buttons">
+          <%= link_to 'details', booking_path(b), :class => "wigbtn btn btn-primary" %>
+          <%= link_to 'edit ', edit_booking_path(b), :class => "wigbtn btn btn-primary"%>
+          <%= link_to 'cancel', booking_path(b), :method  => :delete, :class => "wigbtn btn btn-primary" %>
+          </div>
+      </div>
+      <% end %>
     </div>
-  </div>
-  </div>
-  </div>
-  <% end %>
-  </div>
-  </div>
-
-
+</div>

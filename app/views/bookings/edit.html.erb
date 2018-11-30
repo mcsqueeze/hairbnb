@@ -1,27 +1,22 @@
-
 <h1>Edit your booking</h1>
-
-    <div class="flip col-sm-6">
-          <div class="product-img" style="background-image: url('<%= @wig.photo %>')">
-           <h1 class="text-shadow">
-        </div>
-
-        <div class="product-info">
-          <div class="product-text">
-            <h2><%= @wig.title %></h2>
-            <p>Description: <%= @wig.description %></p>
-            <p>Location: <%= @wig.location %></p>
-            <p>Policies: <%= @wig.policies %></p>
-              <p>$<%= @wig.price %></p>
-          </div>
-          <div class="button-box">
-            <div class="product-price-btn-back">
-              <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"}%>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="col-sm-6">
-    <%= render "bookings/form" %>
+<div class="wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+    <div class="product-img" style="background-image: url('<%= @wig.photo %>')">
     </div>
+    <div class="product-info">
+    <div class="product-text">
+      <h2><%= @wig.title %></h2>
+      <p>Description: <%= @wig.description %></p>
+      <p>$<%= @wig.price %></p>
+    </div>
+    <div class="button-box">
+      <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"}%>
+    </div>
+    </div>
+    </div>
+    <div class="col-xs-12">
+      <%= render "bookings/form" %>
+    </div>
+  </div>
+</div>
