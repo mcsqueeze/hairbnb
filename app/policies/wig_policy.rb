@@ -18,7 +18,7 @@ class WigPolicy < ApplicationPolicy
   end
 
   def edit?
-    true
+    record.user == "bigwig"
   end
 
 

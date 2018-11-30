@@ -46,6 +46,11 @@ class WigsController < ApplicationController
     redirect_to wigs_path
   end
 
+  def dashboard
+    skip_authorization
+    @wigs = Wig.where(user: current_user)
+  end
+
   private
 
   def wig_params

@@ -4,4 +4,10 @@ class UserPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def bigwig?
+    user.usertype == "bigwig"
+  end
+
+
 end
