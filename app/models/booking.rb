@@ -15,7 +15,8 @@ def bookings_must_not_overlap
               .where('start_date < ? AND end_date > ?', end_date, start_date)
               .none?
 
-  errors.add(:base, 'Wig is booked on those dates')
+  errors.add(:base, "Wig is booked on those dates")
+
 end
 
 
