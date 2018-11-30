@@ -9,13 +9,15 @@
       <h2><%= @wig.title %></h2>
       <p>Description: <%= @wig.description %></p>
       <p>$<%= @wig.price %></p>
+      <h5>Rental Date: <%= @booking.start_date%></h6>
+      <h5>Return Date: <%= @booking.end_date%></h6>
     </div>
-    <div class="button-box">
+    <div class="button-box-edit">
       <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"}%>
     </div>
     </div>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12-edit">
       <%= render "bookings/form" %>
     </div>
   </div>
