@@ -3,6 +3,13 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <%= cl_image_tag("wiglogo") %>
   <% end %>
+<%= form_tag wigs_path, method: :get do %>
+<%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search..."
+  %>
+<% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">

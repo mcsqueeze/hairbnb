@@ -1,7 +1,11 @@
 class WigsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   def index
-    @wigs = policy_scope(Wig)
+    if params[:query].present?
+      @wigs = policy_scope(Wig.search_by_title_and_description(params[:query]))
+    else
+      @wigs = policy_scope(Wig)
+    end
   end
 
   def new
