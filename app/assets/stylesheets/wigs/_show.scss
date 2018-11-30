@@ -1,3 +1,20 @@
+.col-xs-12-edit {
+    margin-left: 150px;
+    text-align:center;
+    display: inline-block;
+    margin-right: 300px;
+    margin-top: 25px;
+}
+.col-xs-12-show {
+   margin-left: 150px;
+   text-align:center;
+   display: inline-block;
+   margin-right: 300px;
+   margin-top: 25px;
+}
+
+
+
 .wrapper {
   height: 420px;
   width: 800px;
@@ -114,6 +131,10 @@ background-position: center;
   margin-top: 120px;
   justify-content: space-around;
 
+}
+
+.button-box-edit {
+  margin-top: 45px;
 }
 
 #wig-show {
