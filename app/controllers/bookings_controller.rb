@@ -36,12 +36,19 @@ class BookingsController < ApplicationController
   end
 
   def update
+    skip_authorization
+    if @booking.update(booking_params)
+      flash[:notice] = "booking details successfully updated"
+      redirect_to bookings_path
+    else
+      render :error
+    end
   end
 
   def destroy
     skip_authorization
     Booking.find(params[:id]).destroy
-    flash[:success] = "Booking Deleted"
+    flash[:notice] = "booking successfully deleted"
     redirect_to bookings_path
   end
 

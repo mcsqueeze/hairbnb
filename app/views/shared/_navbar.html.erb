@@ -12,14 +12,16 @@
       <!-- Links when logged in -->
       <%= link_to "home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "browse all wigs", wigs_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
         <% if policy(current_user).bigwig? %>
               <%= link_to "my bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% else %>
-
               <%= link_to "my wigs", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% end %>
 
-      <%= link_to "upload a new wig", new_wig_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% if !policy(current_user).bigwig? %>
+              <%= link_to "upload a new wig", new_wig_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

@@ -8,6 +8,4 @@ class UserPolicy < ApplicationPolicy
   def bigwig?
     user.usertype == "bigwig"
   end
-
-
 end
