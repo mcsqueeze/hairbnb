@@ -4,6 +4,7 @@
     <p>Find Your Best Look</p>
   </div>
 </div>
+<br>
 
 <div class="wide-container">
   <div class="row">
@@ -15,7 +16,6 @@
          <div class="card-description">
           <h2><%=wig.title%></h2>
           <h6><%=wig.description%></p>
-          <p><%= wig.location%></p>
         </div>
        <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/mcsqueeze"> -->
         <%= link_to '', wig_path(wig), class: "card-link" %>
@@ -23,7 +23,9 @@
       </div>
     <% end %>
     </div>
-
+<br>
+<br>
+<br>
 
     <div class="row">
     <h3 class="header">Explore HairBnB</h3>
@@ -33,7 +35,6 @@
          <div class="card-description">
           <h2><%=wig.title%></h2>
           <h6><%=wig.description%></h6>
-          <p><%= wig.location%></p>
         </div>
        <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/mcsqueeze"> -->
         <%= link_to '', wig_path(wig), class: "card-link" %>

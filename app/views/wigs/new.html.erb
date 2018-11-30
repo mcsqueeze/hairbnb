@@ -1,11 +1,7 @@
-<div class="banner" style="background-image: /*linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),*/ url('<%= cl_image_path ("christiana-rivers-258740-unsplash.jpg") %>')">
-  <div class="banner-content">
-    <h1>HairBnB</h1>
-    <p>Find Your Best Look</p>
-  </div>
+<div class="banner new" style="background-image: /*linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),*/ url('<%= cl_image_path ("omurden-cengiz-651591-unsplash.jpg") %>')">
 </div>
 
-
+<div class="row">
 <div class="col-sm-offset-4 col-sm-4">
 <%= simple_form_for [@wig] do |w| %>
 <% if @wig.errors.any? %>
@@ -13,7 +9,7 @@
     <p><%= m %></p>
   <% end %>
 <% end %>
-<h2>Upload a new wig</h2>
+<h2>Upload a New Wig</h2>
   <%= w.input :title %> <%= w.input :price %>
   <%= w.input :description %>
   <%= w.input :photo %>
@@ -22,7 +18,7 @@
   <%= w.input :policies %>
   <%= w.submit "submit wig", class: "btn btn-primary" %>
 <% end %>
-
+</div>
 </div>
 
 
