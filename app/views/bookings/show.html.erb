@@ -5,18 +5,21 @@
           <div class="product-img" style="background-image: url('<%= @booking.wig.photo %>')">
           </div>
           <div class="product-info">
-          <div class="product-text">
+          <div class="product-text-bookings-show">
             <h2><%= @booking.wig.title %></h2>
-            <p> Rental Date: <%= @booking.start_date%></p>
-            <p>Return Date: <%= @booking.end_date%></p>
+            <h6> Rental Date: <%= @booking.start_date%></h6>
+            <h6>Return Date: <%= @booking.end_date%></h6>
             <p>Price: $ <%= @booking.wig.price %>/day</p>
           </div>
-          <div class="button-box">
-              <%= link_to 'Back to Wigs', wigs_path, { :class => "wigbtn btn btn-primary"}%>
-              <%= link_to 'Back to Bookings', bookings_path, { :class => "wigbtn btn btn-primary"} %>
+          <div class=".button-box-bookings-show">
+            <div class="col-xs-12 col-sm-6">
+              <%= link_to 'Back to Wigs', wigs_path, { :class => "btn btn-primary"} %>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+              <%= link_to 'Back to Bookings', bookings_path, { :class => "btn btn-primary"} %>
+            </div>
           </div>
           </div>
         </div>
       </div>
     </div>
-
